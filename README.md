@@ -12,7 +12,7 @@ $ ./autogen.sh && ./configure && make
 
 then if you want to install
 
-$ make install
+$ sudo make install
 
 
 How to use:
