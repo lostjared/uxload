@@ -22,12 +22,12 @@ namespace loader {
         void acceptIp(const std::string &ip);
         void loadIp(const std::string &text);
         void close();
-        void procCode(const std::string &ip, net::Socket &s);
     private:
         std::string pw;
         std::vector<std::string> ip_address;
         net::Socket socket_;
         
+        void procCode(const std::string &ip, net::Socket &s);
         int System(const std::string &command);
     };
     

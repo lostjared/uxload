@@ -72,7 +72,11 @@ namespace loader {
         file.close();
         std::cout << "uxload: Loading program..\n";
         chmod("program", 755);
-        System("./program");
+        if(System("./program") != -1) {
+            std::cout << "uxload: Program finished Execution.\n";
+        } else {
+            std::cout << "uxload: Encountered an error.\n";
+        }
     }
     
     void Loader::acceptIp(const std::string &ip) {
@@ -99,14 +103,14 @@ namespace loader {
     }
     
     void Loader::close() {
-        
+        socket_.closeSocket();
     }
     
     int Loader::System(const std::string &command) {
         sigset_t bmask, omask;
         struct sigaction sa_ignore, sa_oquit, sa_origint, sa_default;
         pid_t id;
-        int status, serrno;
+        int status = 0, serrno;
         
         if(command == "") return System(":") == 0;
         
