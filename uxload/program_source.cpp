@@ -12,9 +12,9 @@ namespace loader {
             std::cerr << "uxload: Error on listen: " << strerror(errno) << "\n";
             return false;
         }
-        std::cout << "uxload: Listening..\n";
+        std::cout << "uxload: Listening on port: " << port << "\n";
         while(1) {
-        	net::Socket sp;
+            net::Socket sp;
             int rt_val = socket_.acceptSocket(sp);
             if(rt_val == -1) {
                 std::cerr << "uxload: Error on accept: " << strerror(errno) << "\n";
@@ -66,7 +66,7 @@ namespace loader {
         while(1) {
             ssize_t len = s.receive(buf, 1024*4);
             if(len > 0)
-            file.write(buf, len);
+                file.write(buf, len);
             else break;
         }
         file.close();

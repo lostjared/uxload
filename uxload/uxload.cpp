@@ -3,10 +3,10 @@
 #include<fstream>
 
 int main(int argc, char **argv) {
-    if(argc == 1) {
+    if(argc == 2) {
         loader::Loader l;
         l.loadIp("ip.cfg");
-        if(!l.startListen("10241")) {
+        if(!l.startListen(argv[1])) {
             std::cerr << "uxload: Error could not listen..\n";
             exit(EXIT_FAILURE);
         }
@@ -36,11 +36,12 @@ int main(int argc, char **argv) {
             socket_.closeSocket();
             exit(EXIT_SUCCESS);
         } else {
-            std::cerr << "uxload: Error requires three arguments.\n" << argv[0] << " target port program\n";
+            std::cerr << "uxload: for listening use:\n" << argv[0] << " port\n";
+            std::cerr << "uxload: for connecting requires three arguments.\n" << argv[0] << " target port program\n";
         }
         
     }
     
-
-	return 0;
+    
+    return 0;
 }
