@@ -9,7 +9,7 @@ namespace loader {
     bool Loader::startListen(const std::string &port) {
         int s = socket_.listenAt(port, net::SocketType::STREAM, 5);
         if(s == -1) {
-            std::cerr << "uxload: Error on listen..\n";
+            std::cerr << "uxload: Error on listen: " << strerror(errno) << "\n";
             return false;
         }
         std::cout << "uxload: Listening..\n";
@@ -17,7 +17,7 @@ namespace loader {
         	net::Socket sp;
             int rt_val = socket_.acceptSocket(sp);
             if(rt_val == -1) {
-                std::cerr << "uxload: Error on accept.\n";
+                std::cerr << "uxload: Error on accept: " << strerror(errno) << "\n";
                 continue;
             }
             socklen_t len;
@@ -56,6 +56,7 @@ namespace loader {
         }
         if(found == false) {
             std::cerr << "Error ip address: " << ip << " not on the accepted list.\n";
+            s.closeSocket();
             return;
         }
         std::cout << "uxload: Receiving program..\n";
