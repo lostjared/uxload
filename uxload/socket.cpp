@@ -1,3 +1,11 @@
+/*
+ uxload
+ written by Jared Bruni
+ 
+ License: GNU LESSER GENERAL PUBLIC LICENSE Version 3
+ 
+*/
+
 #include "socket.hpp"
 
 

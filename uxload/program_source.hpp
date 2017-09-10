@@ -1,3 +1,10 @@
+/*
+ uxload
+ written by Jared Bruni
+ 
+ License: GNU LESSER GENERAL PUBLIC LICENSE Version 3
+ 
+*/
 
 #ifndef __PROGRAM_SOURCE_H__
 #define __PROGRAM_SOURCE_H__

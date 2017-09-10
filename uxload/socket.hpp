@@ -1,3 +1,11 @@
+/*
+ uxload
+ written by Jared Bruni
+ 
+ License: GNU LESSER GENERAL PUBLIC LICENSE Version 3
+ 
+*/
+
 #ifndef __SOCKET__H___X
 #define __SOCKET__H___X
 

@@ -1,3 +1,11 @@
+/*
+ uxload
+ written by Jared Bruni
+ 
+ License: GNU LESSER GENERAL PUBLIC LICENSE Version 3
+ 
+*/
+
 #include"program_source.hpp"
 #include<iostream>
 #include<fstream>
