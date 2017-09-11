@@ -35,13 +35,15 @@ int main(int argc, char **argv) {
                 std::cerr << "uxload: Error on connection to: " << host << " " << port << " ..\n";
                 exit(EXIT_FAILURE);
             }
+            ssize_t sent_bytes = 0;
             while(!file.eof()) {
                 char buf[1024*4];
                 file.read(buf, (1024*4));
-                socket_.sendData(buf, file.gcount());
+                sent_bytes += socket_.sendData(buf, file.gcount());
             }
             file.close();
             socket_.closeSocket();
+            std::cout << "uxload: Sent " << sent_bytes << " bytes..\n";
             exit(EXIT_SUCCESS);
         } else {
             std::cerr << "uxload: for listening use:\n" << argv[0] << " port\n";
