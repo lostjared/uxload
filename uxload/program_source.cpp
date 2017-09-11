@@ -72,13 +72,17 @@ namespace loader {
         std::fstream file;
         file.open("program", std::ios::out | std::ios::binary);
         char buf[1024*4];
+        ssize_t bytes_read = 0;
         while(1) {
             ssize_t len = s.receive(buf, 1024*4);
-            if(len > 0)
+            if(len > 0) {
+                bytes_read += len;
                 file.write(buf, len);
+            }
             else break;
         }
         file.close();
+        std::cout << "uxload: " << bytes_read << " bytes received\n";
         std::cout << "uxload: Loading program..\n";
         chmod("program", 755);
         if(System("./program") != -1) {
