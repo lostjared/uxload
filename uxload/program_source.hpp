@@ -12,6 +12,8 @@
 #include "socket.hpp"
 #include<vector>
 #include<string>
+#include<cctype>
+#include<cstdlib>
 #include<fstream>
 #include<unistd.h>
 #include<sys/stat.h>
