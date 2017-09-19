@@ -63,7 +63,7 @@ int main(int argc, char **argv) {
         std::string host = ip_a.substr(0, pos);
         std::string port = ip_a.substr(pos+1, ip_a.length()-pos);
         std::string filename = send_name;
-        std::cout << "ip: " << host << " port " << port << "\n";
+        std::cout << "uxload: ip " << host << " port " << port << "\n";
         file.open(filename, std::ios::in | std::ios::binary);
         if(!file.is_open()) {
             std::cerr << "uxload: Error could not open file: " << filename << "\n";
