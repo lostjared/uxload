@@ -4,7 +4,7 @@
  
  License: GNU LESSER GENERAL PUBLIC LICENSE Version 3
  
-*/
+ */
 
 #include"program_source.hpp"
 #include<iostream>
@@ -20,7 +20,6 @@ int main(int argc, char **argv) {
     if(argc > 1) {
         int opt = 0;
         while((opt = getopt(argc, argv, "l:s:")) != -1) {
-            
             if(mode != Mode::mode_null) break;
             
             switch(opt) {
@@ -40,7 +39,7 @@ int main(int argc, char **argv) {
         loader::Loader l;
         const char *cfg = getenv("UXLOAD_CFG");
         if(cfg == 0)
-        	l.loadIp(ip_config_file);
+            l.loadIp(ip_config_file);
         else
             l.loadIp(cfg);
         
@@ -91,9 +90,6 @@ int main(int argc, char **argv) {
         std::cerr << "uxload: First for connecting export target ip and port like this in bash:\nexport UXLOAD_NET=\"192.168.8.85:10241\"\n Ip:port\n";
         std::cerr << "uxload: for connecting use:\n" << argv[0] << "  -s program\n";
         
-        
     }
-    
-    
     return 0;
 }
