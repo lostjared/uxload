@@ -21,6 +21,8 @@ int main(int argc, char **argv) {
         int opt = 0;
         while((opt = getopt(argc, argv, "l:s:")) != -1) {
             
+            if(mode != Mode::mode_null) break;
+            
             switch(opt) {
                 case 'l':
                     listen_port = optarg;
