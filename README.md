@@ -23,7 +23,7 @@ open terminal and enter the directory where program should run
 put a text file called ip.cfg in that directory and put a list of accepted ip addresses.
 run the program with port ot listen on:
 
-$ ./uxload -l port
+$ uxload -l port
 
 You can manually specify the ip config file as shell variable UXLOAD_CFG
 
@@ -37,7 +37,7 @@ would be valid.
 
 open terminal and enter directory where program you want to send is and use
 
-$ ./uxload -s program
+$ uxload -s program
 
 ![ScreenShot](https://github.com/lostjared/uxload/blob/master/screens/uxload.png?raw=true "screenshot")
 
