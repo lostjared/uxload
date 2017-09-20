@@ -85,6 +85,7 @@ int main(int argc, char **argv) {
         std::cout << "uxload: Sent " << sent_bytes << " bytes..\n";
         exit(EXIT_SUCCESS);
     }  else {
+        std::cout << "usage: uxload [-l port] [-s program]\n";
         std::cerr << "uxload: for listening use:\n" << argv[0] << " -l port\n";
         std::cerr << "uxload: export UXLOAD_CFG with filename to specify config file with different name than ip.cfg\n";
         std::cerr << "uxload: First for connecting export target ip and port like this in bash:\nexport UXLOAD_NET=\"192.168.8.85:10241\"\n Ip:port\n";
