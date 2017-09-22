@@ -41,6 +41,8 @@ $ uxload -s program
 
 ![ScreenShot](https://github.com/lostjared/uxload/blob/master/screens/uxload.png?raw=true "screenshot")
 
+![ScreenShot](https://github.com/lostjared/uxload/blob/master/screens/uxload_tinkerboard.jpg?raw=true "screenshot")
+
 
 
 
